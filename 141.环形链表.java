@@ -18,7 +18,20 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        
+        Set<ListNode> set = new HashSet<ListNode>();
+        if(head == null){
+            return false;
+        }
+        ListNode pointer = head;
+        while(pointer.next != null){
+          ListNode next = pointer.next;
+          if(set.contains(next)){
+            return true;
+          }
+          set.add(pointer);
+          pointer = next;
+        }
+        return false;
     }
 }
 // @lc code=end
