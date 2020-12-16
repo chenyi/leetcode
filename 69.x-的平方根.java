@@ -11,7 +11,7 @@ class Solution {
             return x;
         }
         int l = 0;
-        int r = x/2 + 1;
+        int r = x;
         while(l < r){
             int mid = l + (r - l) /2;
             if(mid > x / mid){
