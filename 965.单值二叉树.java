@@ -16,7 +16,19 @@
  */
 class Solution {
     public boolean isUnivalTree(TreeNode root) {
+        if(root == null){
+            return true;
+        }
 
+        int val = root.val;
+        return isUnivalTree(root, val);
+    }
+
+    public boolean isUnivalTree(TreeNode root, int val){
+        if(root == null){
+            return true;
+        }
+        return root.val == val && isUnivalTree(root.left, val) && isUnivalTree(root.right, val); 
     }
 }
 // @lc code=end
