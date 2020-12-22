@@ -7,7 +7,7 @@
 // @lc code=start
 class Solution {
     public int numFactoredBinaryTrees(int[] arr) {
-
+        
     }
 }
 // @lc code=end
