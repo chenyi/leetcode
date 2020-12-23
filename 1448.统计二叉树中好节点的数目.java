@@ -21,8 +21,34 @@
  * }
  */
 class Solution {
+
+    int counter = 0;
+
     public int goodNodes(TreeNode root) {
-        
+        if(root == null){
+            return 0;
+        }
+
+        int max = root.val;
+
+        dfs(root, max);
+
+        return counter;
+    }
+
+    public void dfs(TreeNode root, int max){
+        if(root == null){
+            return;
+        }
+        int rv = root.val;
+        TreeNode l = root.left;
+        TreeNode r = root.right;
+        if(rv >= max){
+            counter++;
+            max = Math.max(rv, max);
+        } 
+        dfs(l, max);
+        dfs(r, max);
     }
 }
 // @lc code=end
